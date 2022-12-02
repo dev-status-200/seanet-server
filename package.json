@@ -1,0 +1,37 @@
+{
+  "name": "seanet-system-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.1237.0",
+    "body-parser": "^1.20.0",
+    "cloudinary": "^1.32.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "fs": "^0.0.1-security",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.29.4",
+    "mongodb": "^4.10.0",
+    "mongoose": "^6.6.5",
+    "morgan": "^1.10.0",
+    "mysql2": "^2.3.3",
+    "nodemon": "^2.0.19",
+    "qrcode-terminal": "^0.12.0",
+    "redis": "^4.3.1",
+    "sequelize": "^6.21.3",
+    "sequelize-cli": "^6.4.1",
+    "sib-api-v3-sdk": "^8.4.2",
+    "socket.io": "^4.5.2",
+    "start": "^5.1.0",
+    "twilio": "^3.81.0",
+    "websocket": "^1.0.34",
+    "whatsapp-web.js": "^1.17.1"
+  }
+}

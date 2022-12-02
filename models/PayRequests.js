@@ -1,0 +1,41 @@
+module.exports = (sequelize, DataTypes) => {
+    const PayRequests = sequelize.define("PayRequests", {
+        reason:{
+            type:DataTypes.STRING
+        },
+        type:{
+            type:DataTypes.STRING
+        },
+        company:{
+            type:DataTypes.STRING
+        },
+        paidTo:{
+            type:DataTypes.STRING
+        },
+        reqBy:{
+            type:DataTypes.STRING
+        },
+        rupees:{
+            type:DataTypes.STRING
+        },
+        amount:{
+            type:DataTypes.STRING
+        },
+        approve:{
+            type:DataTypes.STRING
+        },
+        approvedDate:{
+            type:DataTypes.STRING
+        },
+        editedDate:{
+            type:DataTypes.STRING
+        },
+        editedBy:{
+            type:DataTypes.STRING
+        },
+        exception:{
+            type:DataTypes.STRING
+        },
+    })
+    return PayRequests;
+}
