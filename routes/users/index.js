@@ -249,8 +249,24 @@ routes.post("/editPayReq", async(req, res) => {
             editedDate:req.body.editedDate,
             type:req.body.type
         },{where:{id:req.body.id}})
-        //const list = await Users.findAll({where:{type:'Admin'}})
-        //emailReqFunc(list, req.body.amount, req.body.username, req.body.type, req.body.amount)
+        //const list = await Users.findAll({where:{type:'Admin'}});
+        //emailReqFunc(list, req.body.amount, req.body.username, req.body.type, req.body.amount);
+        res.send(result);
+    }
+    catch (error) {
+      res.send(error)
+    }
+});
+
+routes.post("/adminEditPayReq", async(req, res) => {
+    try {
+        console.log(req.body);
+        const result = await PayRequests.update({
+            amount:req.body.amountNum,
+            rupees:req.body.amountWords,
+            editedBy:req.body.username,
+            editedDate:req.body.approvedDate,
+        },{where:{id:req.body.id}});
         res.send(result);
     }
     catch (error) {

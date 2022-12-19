@@ -22,7 +22,6 @@ const server = http.createServer(app);
 const io = new Server(server, { cors: {origin: "*"} });
 
 const socketRoutes = require('./routes/socketRoutes/')(io);
-
 const { PayRequests } = require('./functions/associations/payRequestAssociation')
 
 app.use(bodyParser.urlencoded({limit: '100mb', extended: true}));
@@ -30,7 +29,7 @@ app.use(bodyParser.json({limit: '100mb', extended: true}));
 app.use(express.json());
 db.sequelize.sync();
 
-//app.get("/", (req, res) => { res.json('Welcome to Sea Net System Server') });
+app.get("/", (req, res) => { res.json('Welcome to Sea Net System Server') });
 app.get("/getUser", verify, (req, res) => { res.json({isLoggedIn:true, username:req.body.username}) });
 app.use("/testBills", testBillsRoutes);
 app.use("/shipments",shipmentRoutes);
@@ -41,5 +40,4 @@ app.use("/auth", authRoutes);
 app.get("/", socketRoutes);
 
 const PORT = process.env.PORT || 8080;
-
 server.listen(PORT, () => { console.log(`App listenings on port ${PORT}`) });
